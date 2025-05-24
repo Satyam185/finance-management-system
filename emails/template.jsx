@@ -68,16 +68,16 @@ export default function EmailTemplate({
             <Section style={styles.statsContainer}>
               <div style={styles.stat}>
                 <Text style={styles.text}>Total Income</Text>
-                <Text style={styles.heading}>${data?.stats.totalIncome}</Text>
+                <Text style={styles.heading}>Rs.{data?.stats.totalIncome}</Text>
               </div>
               <div style={styles.stat}>
                 <Text style={styles.text}>Total Expenses</Text>
-                <Text style={styles.heading}>${data?.stats.totalExpenses}</Text>
+                <Text style={styles.heading}>Rs.{data?.stats.totalExpenses}</Text>
               </div>
               <div style={styles.stat}>
                 <Text style={styles.text}>Net</Text>
                 <Text style={styles.heading}>
-                  ${data?.stats.totalIncome - data?.stats.totalExpenses}
+                  Rs.{data?.stats.totalIncome - data?.stats.totalExpenses}
                 </Text>
               </div>
             </Section>
@@ -100,7 +100,7 @@ export default function EmailTemplate({
             {/* AI Insights */}
             {data?.insights && (
               <Section style={styles.section}>
-                <Heading style={styles.heading}>Welth Insights</Heading>
+                <Heading style={styles.heading}>Smart Insights</Heading>
                 {data.insights.map((insight, index) => (
                   <Text key={index} style={styles.text}>
                     • {insight}
@@ -110,7 +110,7 @@ export default function EmailTemplate({
             )}
 
             <Text style={styles.footer}>
-              Thank you for using Welth. Keep tracking your finances for better
+              Thank you for using Smart Wealth. Keep tracking your finances for better
               financial health!
             </Text>
           </Container>

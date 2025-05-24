@@ -29,7 +29,7 @@ export default async function AccountPage({ params }) {
 
         <div className="text-right pb-2">
           <div className="text-xl sm:text-2xl font-bold">
-            ${parseFloat(account.balance).toFixed(2)}
+            Rs.{parseFloat(account.balance).toFixed(2)}
           </div>
           <p className="text-sm text-muted-foreground">
             {account._count.transactions} Transactions
@@ -42,14 +42,16 @@ export default async function AccountPage({ params }) {
         fallback={<BarLoader className="mt-4" width={"100%"} color="#9333ea" />}
       >
         <AccountChart transactions={transactions} />
+        <TransactionTable transactions={transactions} />
+
       </Suspense>
 
       {/* Transactions Table */}
-      <Suspense
+      {/* <Suspense
         fallback={<BarLoader className="mt-4" width={"100%"} color="#9333ea" />}
       >
         <TransactionTable transactions={transactions} />
-      </Suspense>
+      </Suspense> */}
     </div>
   );
 }
